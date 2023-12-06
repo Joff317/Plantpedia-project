@@ -3,12 +3,6 @@ import React from "react";
 const HomeArrow = (props) => {
   const isFirstPage = props.currentPage === 1;
 
-  const arrowStyles = {
-    arrow: {
-      justifyContent: isFirstPage ? "end" : "space-between",
-    },
-  };
-
   return (
     <>
       <div

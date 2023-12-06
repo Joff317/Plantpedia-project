@@ -40,15 +40,17 @@ export default function Nav() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
-          <img src={logo} className="w-12 h-12 rounded-xl mr-2" />
-          PlantPedia
-        </NavbarBrand>
+        <Link href="/">
+          <NavbarBrand>
+            <img src={logo} className="w-12 h-12 rounded-xl mr-2" />
+            PlantPedia
+          </NavbarBrand>
+        </Link>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-8">
         <NavbarItem>
-          <Link color="foreground" to={"/searchPlant"}>
+          <Link href="/searchPlant" color="foreground" >
             Search Plant
           </Link>
         </NavbarItem>
@@ -58,7 +60,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground">
             Search by countries
           </Link>
         </NavbarItem>
