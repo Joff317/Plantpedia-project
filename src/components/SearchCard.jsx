@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SearchCard = (props) => {
   console.log(props);
-  isImage = props.plant.image_url;
+  const isImage = props.plant.image_url;
   //   console.log(props);
   return (
     <>
