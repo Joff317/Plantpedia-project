@@ -3,6 +3,8 @@ import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
 const SearchCard = (props) => {
+  console.log(props);
+  isImage = props.plant.image_url;
   //   console.log(props);
   return (
     <>
@@ -10,23 +12,11 @@ const SearchCard = (props) => {
         <Card
           isFooterBlurred
           className="w-[250px] h-[300px] col-span-12 sm:col-span-5"
+          style={isImage ? { visibility: "hidden" } : { visibility: "visible" }}
         >
           <CardHeader className="absolute z-10 top-1 flex-col items-start">
-            <h4
-              className=" font-medium text-2xl"
-              style={
-                props.plant.common_name && props.plant.image_url
-                  ? {
-                      textColor: "white",
-                    }
-                  : {
-                      textColor: "black",
-                    }
-              }
-            >
-              {props.plant.common_name
-                ? props.plant.common_name
-                : props.plant.slug}
+            <h4 className=" font-medium text-2xl">
+              {props.plant.common_name || props.plant.scientific_name}
             </h4>
           </CardHeader>
           <Image
