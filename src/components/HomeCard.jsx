@@ -4,16 +4,20 @@ import { Link } from "react-router-dom";
 
 const HomeCard = (props) => {
   //   console.log(props);
+  const isImage = props.plant.image_url;
   return (
     <>
       <div key={props.plant.id} className="col-span-1">
         <Card
           isFooterBlurred
           className="w-[250px] h-[300px] col-span-12 sm:col-span-5"
+          style={
+            !isImage ? { visibility: "hidden" } : { visibility: "visible" }
+          }
         >
-          <CardHeader className="absolute z-10 top-1 flex-col items-start">
-            <h4 className="text-white font-medium text-2xl">
-              {props.plant.common_name}
+          <CardHeader className="absolute z-10 top-1 flex-col items-start backdrop-blur-sm rounded-md w-auto">
+            <h4 className="text-white font-bold text-lg p-1">
+              {props.plant.common_name || props.plant.scientific_name}
             </h4>
           </CardHeader>
           <Image
