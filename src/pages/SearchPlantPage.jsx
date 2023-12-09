@@ -75,14 +75,6 @@ export default function SearchPlantPage() {
           <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
         }
       />
-      {/* <label htmlFor="search-plant">Search Specific Plant in English</label>
-      <input
-        type="text"
-        className="text-black"
-        placeholder="search for special beers"
-        value={query}
-        onChange={handleQuery}
-      /> */}
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
         {plants.length > 0 &&
           plants.map((plant) =>

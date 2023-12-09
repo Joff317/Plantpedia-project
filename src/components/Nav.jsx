@@ -50,19 +50,17 @@ export default function Nav() {
 
       <NavbarContent className="hidden sm:flex gap-8">
         <NavbarItem>
-          <Link href="/searchPlant" color="foreground" >
+          <Link href="/searchPlant" color="foreground">
             Search Plant
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+          <Link href="/searchCategories" aria-current="page">
             Search by categories
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground">
-            Search by countries
-          </Link>
+          <Link color="foreground">Search by countries</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
