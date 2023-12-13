@@ -3,39 +3,39 @@ import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
 const HomeCard = (props) => {
-  //   console.log(props);
-  const isImage = props.plant.image_url;
+  const { plant } = props;
+  const isImage = plant.image_url;
   return (
     <>
-      <div key={props.plant.id} className="col-span-1">
+      <div key={plant.id} className="col-span-1">
         <Card
           isFooterBlurred
           className="w-[250px] h-[300px] col-span-12 sm:col-span-5"
-          style={
-            !isImage ? { visibility: "hidden" } : { visibility: "visible" }
-          }
         >
           <CardHeader className="absolute z-10 top-1 flex-col items-start backdrop-blur-sm rounded-md w-auto">
             <h4 className="text-white font-bold text-lg p-1">
-              {props.plant.common_name || props.plant.scientific_name}
+              {plant.common_name || plant.scientific_name}
             </h4>
           </CardHeader>
-          <Image
-            removeWrapper
-            alt="Card example background"
-            className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-            src={props.plant.image_url}
-          />
+          {isImage ? (
+            <Image
+              removeWrapper
+              alt="Card example background"
+              className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
+              src={plant.image_url}
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full">
+               <p></p>
+              <p className="text-black text-lg">No image available</p>
+            </div>
+          )}
           <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
             <div>
-              <p className="text-black text-tiny">
-                Discover in : {props.plant.year}
-              </p>
-              <p className="text-black text-tiny">
-                Family : {props.plant.family}
-              </p>
+              <p className="text-black text-tiny">Discover in : {plant.year}</p>
+              <p className="text-black text-tiny">Family : {plant.family}</p>
             </div>
-            <Link to={`/${props.plant.id}`}>
+            <Link to={`/${plant.id}`}>
               <Button
                 className="text-tiny"
                 color="primary"
