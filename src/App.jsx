@@ -6,7 +6,8 @@ import HomePage from "./pages/HomePage";
 import Nav from "./components/Nav";
 import SearchPlantPage from "./pages/SearchPlantPage";
 import PlantDetails from "./pages/PlantDetails";
-// import SearchByCategories from "./pages/SearchByCategories";
+import SearchByCategories from "./pages/SearchByCategories";
+import SearchByCountries from "./pages/SearchByCountries";
 export default function App() {
   return (
     <div className="min-h-screen">
@@ -15,7 +16,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/searchPlant" element={<SearchPlantPage />} />
         <Route path="/:plantId" element={<PlantDetails />} />
-        {/* <Route path="/searchCategories" element={<SearchByCategories />} /> */}
+        <Route path="/searchCategories" element={<SearchByCategories />} />
+        <Route path="/searchCountries" element={<SearchByCountries />} />
       </Routes>
     </div>
   );

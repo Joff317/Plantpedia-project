@@ -5,10 +5,12 @@ import HomeCard from "../components/HomeCard";
 import SearchCard from "../components/SearchCard";
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "../assets/SearchIcon";
+import HomeArrow from "../components/HomeArrow";
 
 export default function SearchPlantPage() {
   const [plants, setPlants] = useState([]);
   const [query, setGetQuery] = useState("coconut");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const matchPlantNames = (inputValue, plantName) => {
     if (inputValue.length >= 3) {
@@ -18,23 +20,36 @@ export default function SearchPlantPage() {
     return false;
   };
 
-  const fetchOneSpecificPlant = () => {
+  const fetchOneSpecificPlant = (page = 1) => {
     if (query.trim() !== "") {
       axios
         .get(
-          `https://server-express-eight.vercel.app/plants/search?query=${query}`
+          `https://server-express-eight.vercel.app/plants/search?query=${query}&page=${page}`
         )
         .then((res) => {
           console.log(res.data.data);
           setPlants(res.data.data);
+          setCurrentPage(page);
         })
         .catch((e) => console.error(e));
     }
   };
 
   useEffect(() => {
-    fetchOneSpecificPlant();
+    fetchOneSpecificPlant(currentPage);
   }, [query]);
+
+  useEffect(() => {
+    fetchOneSpecificPlant(currentPage);
+  }, [currentPage]);
+
+  const handleClickNext = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
+  const handleClickLast = () => {
+    setCurrentPage(currentPage - 1);
+  };
 
   const handleQuery = (e) => {
     e.preventDefault();
@@ -80,12 +95,19 @@ export default function SearchPlantPage() {
           plants.map((plant) =>
             matchPlantNames(
               query,
-              plant.common_name || plant.scientific_name
+              plant.common_name ? plant.common_name : plant.scientific_name
             ) ? (
               <HomeCard key={plant.id} plant={plant} />
             ) : null
           )}
       </div>
+      {plants && (
+        <HomeArrow
+          currentPage={currentPage}
+          handleClickLast={handleClickLast}
+          handleClickNext={handleClickNext}
+        />
+      )}
     </div>
   );
 }

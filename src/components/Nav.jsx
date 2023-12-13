@@ -54,13 +54,13 @@ export default function Nav() {
             Search Plant
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link href="/searchCategories" aria-current="page">
             Search by categories
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground">Search by countries</Link>
+          <Link href="searchCountries">Search by countries</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
