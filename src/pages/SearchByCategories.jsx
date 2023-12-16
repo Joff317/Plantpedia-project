@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import HomeArrow from "../components/HomeArrow";
 import HomeCard from "../components/HomeCard/HomeCard";
+import { Select, SelectItem } from "@nextui-org/react";
 
 export default function SearchByCategories() {
-  const [getFilterParams, setGetFilterParams] = useState("year");
+  const [getFilterParams, setGetFilterParams] = useState();
   const [filteredData, setFilteredData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -39,7 +40,7 @@ export default function SearchByCategories() {
   };
 
   useEffect(() => {
-    fetchByParams();
+   fetchByParams()
   }, [getFilterParams]);
 
   const handleClickNext = () => {
@@ -50,15 +51,26 @@ export default function SearchByCategories() {
     fetchByParams(currentPage - 1);
   };
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    console.log(e.target.value);
-    setGetFilterParams(e.target.value);
+  const handleChange = (value) => {
+    console.log(value);
+    setGetFilterParams(value);
   };
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center text-black">
-      <select
+      <Select
+        label="Select a category"
+        className="max-w-xs"
+        value={getFilterParams}
+        onChange={handleChange}
+      >
+        {options.map((option) => (
+          <SelectItem key={option.value} value={option.value}>
+            {option.text}
+          </SelectItem>
+        ))}
+      </Select>
+      {/* <select
         className="mb-4"
         value={getFilterParams}
         onChange={(e) => handleChange(e)}
@@ -68,7 +80,7 @@ export default function SearchByCategories() {
             {option.text}
           </option>
         ))}
-      </select>
+      </select> */}
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
         {filteredData.length > 0 &&
           filteredData.map((plant) => (

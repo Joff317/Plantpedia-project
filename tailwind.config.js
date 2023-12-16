@@ -10,6 +10,8 @@ export default {
     extend: {
       fontFamily: {
         pt: ["PT", "sans-serif"],
+        playpenSans: ["'Playpen Sans'", "sans-serif"],
+        rubikDoodleShadow: ["'Rubik Doodle Shadow'", "sans-serif"], // Ajout de la police Rubik Doodle Shadow
       },
     },
   },
