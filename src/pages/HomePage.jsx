@@ -34,11 +34,11 @@ export default function HomePage() {
   const handleClickLast = () => {
     fetchData(currentPage - 1);
   };
-
+[]
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center ">
       <div>
-        <h1 className="text-black lg:text-5xl mb-8 md:text-2xl sm:text-xl">
+        <h1 className="text-black lg:text-5xl mb-8 md:text-2xl sm:text-xl font-rubikDoodleShadow">
           Welcome on PlantPedia
         </h1>
       </div>
