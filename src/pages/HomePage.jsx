@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import HomeCard from "../components/HomeCard";
+import HomeCard from "../components/HomeCard/HomeCard";
 import HomeArrow from "../components/HomeArrow";
 // import Nav from "../components/Nav";
 
@@ -36,9 +36,9 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center">
+    <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center ">
       <div>
-        <h1 className="text-black text-4xl mb-8">Welcome on PlantPedia</h1>
+        <h1 className="text-black text-5xl mb-8">Welcome on PlantPedia</h1>
       </div>
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
         {plantData &&

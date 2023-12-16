@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HomeArrow from "../components/HomeArrow";
-import HomeCard from "../components/HomeCard";
+import HomeCard from "../components/HomeCard/HomeCard";
 
 export default function SearchByCategories() {
   const [getFilterParams, setGetFilterParams] = useState("year");
@@ -58,7 +58,11 @@ export default function SearchByCategories() {
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center text-black">
-      <select className="mb-4" value={getFilterParams} onChange={(e) => handleChange(e)}>
+      <select
+        className="mb-4"
+        value={getFilterParams}
+        onChange={(e) => handleChange(e)}
+      >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.text}

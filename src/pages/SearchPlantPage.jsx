@@ -1,7 +1,7 @@
 import { Card } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import HomeCard from "../components/HomeCard";
+import HomeCard from "../components/HomeCard/HomeCard";
 import SearchCard from "../components/SearchCard";
 import { Input } from "@nextui-org/react";
 import { SearchIcon } from "../assets/SearchIcon";
@@ -101,13 +101,14 @@ export default function SearchPlantPage() {
             ) : null
           )}
       </div>
-      {plants && (
-        <HomeArrow
-          currentPage={currentPage}
-          handleClickLast={handleClickLast}
-          handleClickNext={handleClickNext}
-        />
-      )}
+      {plants &&
+        (currentPage !== 1 || (currentPage === 1 && plants.length === 20)) && (
+          <HomeArrow
+            currentPage={currentPage}
+            handleClickLast={handleClickLast}
+            handleClickNext={handleClickNext}
+          />
+        )}
     </div>
   );
 }

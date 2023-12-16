@@ -9,7 +9,8 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@nextui-org/react";
-import logo from "../assets/fern-821293_640.jpg";
+import logo from "../../assets/fern-821293_640.jpg";
+import './Nav.css'
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -48,7 +49,7 @@ export default function Nav() {
         </Link>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-8">
+      <NavbarContent className="hidden sm:flex gap-8" id="nav-ul">
         <NavbarItem>
           <Link href="/searchPlant" color="foreground">
             Search Plant
@@ -60,7 +61,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link href="searchCountries">Search by countries</Link>
+          <Link href="/searchCountries">Search by countries</Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import './HomeCard.css'
 
 const HomeCard = (props) => {
   const { plant } = props;
@@ -12,8 +13,8 @@ const HomeCard = (props) => {
           isFooterBlurred
           className="w-[250px] h-[300px] col-span-12 sm:col-span-5"
         >
-          <CardHeader className="absolute z-10 top-1 flex-col items-start backdrop-blur-sm rounded-md w-auto">
-            <h4 className="text-white font-bold text-lg p-1">
+          <CardHeader className="absolute z-10 top-1 flex-col items-start">
+            <h4 className="text-black font-bold text-lg p-1" id="title-header">
               {plant.common_name || plant.scientific_name}
             </h4>
           </CardHeader>
@@ -37,7 +38,7 @@ const HomeCard = (props) => {
             </div>
             <Link to={`/${plant.id}`}>
               <Button
-                className="text-tiny"
+                className="text-tiny bg-lime-700 font-bold text-black"
                 color="primary"
                 radius="full"
                 size="sm"

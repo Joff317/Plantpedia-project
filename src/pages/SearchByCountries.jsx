@@ -36,7 +36,7 @@ export default function SearchByCountries() {
       <div>
         {countries &&
           countries.map((country) => (
-            <Link to={`/${country.slug}`} key={country.id}>
+            <Link to={`/searchCountries/${country.slug}`} key={country.id}>
               <p className="text-black">{country.name}</p>
             </Link>
           ))}
