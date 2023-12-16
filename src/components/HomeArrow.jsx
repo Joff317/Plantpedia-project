@@ -6,7 +6,7 @@ const HomeArrow = (props) => {
   return (
     <>
       <div
-        className="arrow-content flex flex-row mt-5 w-[500px] items-center mb-6"
+        className="arrow-content flex flex-row mt-5 lg:w-[500px] items-center mb-6 sm:w-[250px]"
         style={
           isFirstPage
             ? { justifyContent: "end" }
@@ -16,7 +16,7 @@ const HomeArrow = (props) => {
         {props.currentPage > 1 && (
           <div
             onClick={props.handleClickLast}
-            className="flex items-center justify-center border-solid border-2 w-8 h-8 border-black back-arrow text-black text-center content-center rounded-md text-lg"
+            className="flex items-center justify-center border-solid border-2 w-8 h-8 border-white back-arrow text-white text-center content-center rounded-md text-lg"
           >
             ←
           </div>
@@ -24,7 +24,7 @@ const HomeArrow = (props) => {
 
         <div
           onClick={props.handleClickNext}
-          className="flex items-center justify-center border-solid border-2 w-8 h-8 border-black next-arrow text-black text-center rounded-md text-lg"
+          className="flex items-center justify-center border-solid border-2 w-8 h-8 border-white next-arrow text-white text-center rounded-md text-lg"
         >
           {" "}
           →{" "}

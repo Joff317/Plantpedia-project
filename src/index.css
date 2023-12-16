@@ -35,12 +35,12 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  background-color: rgba(222, 234, 227, 0.957);
+  background-color: rgba(6, 6, 6, 0.957);
 }
 
 h1 {
   line-height: 1.1;
-  -webkit-text-stroke: 1px green;
+  -webkit-text-stroke: 2px green;
   font: bold;
 }
 

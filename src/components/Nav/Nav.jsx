@@ -10,23 +10,25 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/react";
 import logo from "../../assets/fern-821293_640.jpg";
-import './Nav.css'
+import "./Nav.css";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const location = useLocation();
 
   const menuItems = [
     {
       name: "Search plant",
-      link: "/searchPlant",
+      navlink: "/searchPlant",
     },
     {
       name: "Search by categories",
-      link: "/plantCategories",
+      navlink: "/plantCategories",
     },
     {
       name: "Search by countries",
-      link: "/country",
+      navlink: "/country",
     },
   ];
 
@@ -41,46 +43,65 @@ export default function Nav() {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <Link href="/">
+        <NavLink to="/">
           <NavbarBrand>
             <img src={logo} className="w-12 h-12 rounded-xl mr-2" />
-            PlantPedia
+            <p className="text-black">PlantPedia</p>
           </NavbarBrand>
-        </Link>
+        </NavLink>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-8" id="nav-ul">
         <NavbarItem>
-          <Link href="/searchPlant" color="foreground">
+          <NavLink
+            to="/searchPlant"
+            id="home-item"
+            className={`navitem ${
+              location.pathname === "/searchPlant" ? "active" : ""
+            }`}
+          >
             Search Plant
-          </Link>
+          </NavLink>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/searchCategories" aria-current="page">
+          <NavLink
+            to="/searchCategories"
+            aria-current="page"
+            className={`navitem ${
+              location.pathname === "/searchCategories" ? "active" : ""
+            }`}
+          >
             Search by categories
-          </Link>
+          </NavLink>
         </NavbarItem>
         <NavbarItem>
-          <Link href="/searchCountries">Search by countries</Link>
+          <NavLink
+            to="/searchCountries"
+            className={`navitem ${
+              location.pathname === "/searchCountries" ? "active" : ""
+            }`}
+          >
+            Search by countries
+          </NavLink>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
+            <NavLink
+              // color={
+              //   index === 2
+              //     ? "primary"
+              //     : index === menuItems.length - 1
+              //     ? "danger"
+              //     : "foreground"
+              // }
               className="w-full"
-              href={item.link}
+              href={item.navlink}
               size="lg"
             >
               {item.name}
-            </Link>
+            </NavLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
