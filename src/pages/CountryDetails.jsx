@@ -41,12 +41,19 @@ export default function CountryDetails() {
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center">
-      <h1>Country Details</h1>
-      <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
-        {countryDetails &&
+      <h1 className="lg:text-5xl mb-8 md:text-2xl sm:text-xl font-rubikDoodleShadow">
+        Country Details
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+        {countryDetails.length > 0 ? (
           countryDetails.map((plant) => (
             <HomeCard key={plant.id} plant={plant} />
-          ))}
+          ))
+        ) : (
+          <p className="text-black bg-white p-2 m-2 rounded-lg cursor-pointer hover:bg-slate-300 text-center font-semibold w-full col-span-full">
+            Pas de données disponibles
+          </p>
+        )}
       </div>
       {countryDetails && (
         <HomeArrow

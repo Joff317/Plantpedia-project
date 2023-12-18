@@ -60,7 +60,7 @@ export default function SearchByCategories() {
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center text-black">
       <Select
         label="Select a category"
-        className="max-w-xs"
+        className="max-w-xs mb-8"
         value={getFilterParams}
         onChange={handleChange}
       >
