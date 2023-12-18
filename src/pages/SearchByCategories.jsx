@@ -76,17 +76,6 @@ export default function SearchByCategories() {
           </SelectItem>
         ))}
       </Select>
-      {/* <select
-        className="mb-4"
-        value={getFilterParams}
-        onChange={(e) => handleChange(e)}
-      >
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.text}
-          </option>
-        ))}
-      </select> */}
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
         {filteredData.length > 0 &&
           filteredData.map((plant) => (

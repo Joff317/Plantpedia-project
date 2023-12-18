@@ -46,7 +46,7 @@ export default function Nav() {
         <NavLink to="/">
           <NavbarBrand>
             <img src={logo} className="w-12 h-12 rounded-xl mr-2" />
-            <p className="text-black">PlantPedia</p>
+            <p className="text-black font-pacifico">PlantPedia</p>
           </NavbarBrand>
         </NavLink>
       </NavbarContent>
@@ -58,7 +58,7 @@ export default function Nav() {
             id="home-item"
             className={`navitem ${
               location.pathname === "/searchPlant" ? "active" : ""
-            }`}
+            } font-pacifico`}
           >
             Search Plant
           </NavLink>
@@ -69,7 +69,7 @@ export default function Nav() {
             aria-current="page"
             className={`navitem ${
               location.pathname === "/searchCategories" ? "active" : ""
-            }`}
+            } font-pacifico`}
           >
             Search by categories
           </NavLink>
@@ -79,7 +79,7 @@ export default function Nav() {
             to="/searchCountries"
             className={`navitem ${
               location.pathname === "/searchCountries" ? "active" : ""
-            }`}
+            } font-pacifico`}
           >
             Search by countries
           </NavLink>
