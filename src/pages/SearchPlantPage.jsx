@@ -2,14 +2,12 @@ import { Card } from "@nextui-org/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import HomeCard from "../components/HomeCard/HomeCard";
-import SearchCard from "../components/SearchCard";
-import { Input } from "@nextui-org/react";
-import { SearchIcon } from "../assets/SearchIcon";
 import HomeArrow from "../components/HomeArrow";
+import SearchInput from "../components/SearchInput";
 
 export default function SearchPlantPage() {
   const [plants, setPlants] = useState([]);
-  const [query, setGetQuery] = useState("coconut");
+  const [query, setGetQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   const matchPlantNames = (inputValue, plantName) => {
@@ -58,38 +56,7 @@ export default function SearchPlantPage() {
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center">
-      <Input
-        value={query}
-        onChange={handleQuery}
-        label="Search"
-        radius="lg"
-        classNames={{
-          label: "text-black/50 dark:text-white/90",
-          input: [
-            "bg-transparent",
-            "text-black/90 dark:text-white/90",
-            "placeholder:text-default-700/50 dark:placeholder:text-white/60",
-          ],
-          innerWrapper: "bg-transparent",
-          inputWrapper: [
-            "shadow-xl",
-            "bg-default-200/50",
-            "dark:bg-default/60",
-            "backdrop-blur-xl",
-            "backdrop-saturate-200",
-            "hover:bg-default-200/70",
-            "dark:hover:bg-default/70",
-            "group-data-[focused=true]:bg-default-200/50",
-            "dark:group-data-[focused=true]:bg-default/60",
-            "!cursor-text",
-          ],
-        }}
-        className="text-black w-[16em] mb-4"
-        placeholder="Type to search..."
-        startContent={
-          <SearchIcon className="text-black/50 mb-0.5 dark:text-white/90 text-slate-400 pointer-events-none flex-shrink-0" />
-        }
-      />
+      <SearchInput handleQuery={handleQuery} query={query}/>
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4">
         {plants.length > 0 &&
           plants.map((plant) =>

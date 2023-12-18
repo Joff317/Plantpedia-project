@@ -30,18 +30,13 @@
    /* Position sous l'élément */
    left: 0;
    width: 0;
-   /* Largeur initiale du trait */
    height: 2px;
-   /* Épaisseur du trait */
    background-color: rgb(65, 65, 67);
-   /* Couleur du trait */
    transition: width 0.3s ease;
-   /* Animation de la largeur du trait */
 }
 
 .navitem {
    position: relative;
-   text-decoration: none;
    color: black;
    /* Couleur par défaut du texte */
 }

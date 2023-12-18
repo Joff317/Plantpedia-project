@@ -9,9 +9,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        pt: ["PT", "sans-serif"],
-        playpenSans: ["'Playpen Sans'", "sans-serif"],
-        rubikDoodleShadow: ["'Rubik Doodle Shadow'", "sans-serif"], // Ajout de la police Rubik Doodle Shadow
+        "barlow-condensed": ["Barlow Condensed", "sans-serif"],
+        preahvihear: ["Preahvihear", "sans-serif"],
+        'dancing-script': ['Dancing Script', 'cursive'],
+        'pacifico': ['Pacifico', 'cursive'],
+        'permanent-marker': ['Permanent Marker', 'cursive'],
+        'saira-condensed': ['Saira Condensed', 'sans-serif'],
       },
     },
   },
