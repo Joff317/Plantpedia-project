@@ -44,7 +44,7 @@ export default function CountryDetails() {
       <h1 className="lg:text-5xl mb-8 md:text-2xl sm:text-xl font-rubikDoodleShadow">
         Country Details
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
         {countryDetails.length > 0 ? (
           countryDetails.map((plant) => (
             <HomeCard key={plant.id} plant={plant} />

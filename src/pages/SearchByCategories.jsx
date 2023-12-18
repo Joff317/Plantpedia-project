@@ -24,23 +24,28 @@ export default function SearchByCategories() {
   const fetchByParams = (page = 1) => {
     const filterParams = getFilterParams;
 
-    axios
-      .get(
-        `https://server-express-eight.vercel.app/plants/sort?params=${filterParams}&page=${page}`
-      )
-      .then((res) => {
-        console.log(res.data);
-        setFilteredData(res.data.data);
-        setCurrentPage(page);
-      })
-      .catch((error) => {
-        console.error("Erreur:", error);
-        setFilteredData(false);
-      });
+    if (filterParams) {
+      axios
+        .get(
+          `https://server-express-eight.vercel.app/plants/sort?params=${filterParams}&page=${page}`
+        )
+        .then((res) => {
+          console.log(res.data);
+          setFilteredData(res.data.data);
+          setCurrentPage(page);
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+          setFilteredData([]);
+        });
+    } else {
+      // Gérer le cas où aucun filtre n'est sélectionné
+      setFilteredData([]);
+    }
   };
 
   useEffect(() => {
-   fetchByParams()
+    fetchByParams();
   }, [getFilterParams]);
 
   const handleClickNext = () => {
@@ -52,8 +57,9 @@ export default function SearchByCategories() {
   };
 
   const handleChange = (value) => {
-    console.log(value);
-    setGetFilterParams(value);
+    const selectedValue = value?.target?.value || value;
+
+    setGetFilterParams(selectedValue);
   };
 
   return (
