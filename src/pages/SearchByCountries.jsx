@@ -33,11 +33,11 @@ export default function SearchByCountries() {
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center">
       <h1 className="text-black">SELECT A SPECIFIC AREA</h1>
-      <div>
+      <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-4 mt-8">
         {countries &&
           countries.map((country) => (
             <Link to={`/searchCountries/${country.slug}`} key={country.id}>
-              <p className="text-black">{country.name}</p>
+              <p className="text-black bg-white p-2 m-2 rounded-lg cursor-pointer hover:bg-slate-300 text-center font-semibold">{country.name}</p>
             </Link>
           ))}
       </div>
