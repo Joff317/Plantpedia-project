@@ -50,7 +50,7 @@ export default function CountryDetails() {
             <HomeCard key={plant.id} plant={plant} />
           ))
         ) : (
-          <p className="text-black bg-white p-2 m-2 rounded-lg cursor-pointer hover:bg-slate-300 text-center font-semibold w-full col-span-full">
+          <p className="text-black bg-green-600 p-2 m-2 rounded-lg cursor-pointer hover:bg-slate-300 text-center font-semibold w-full col-span-full">
             Pas de données disponibles
           </p>
         )}

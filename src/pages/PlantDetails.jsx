@@ -25,7 +25,7 @@ export default function PlantDetails() {
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col justify-center items-center">
-      <h1 className="text-black text-5xl mb-8 text-center font-pacifico">
+      <h1 className="text-black text-4xl mb-8 text-center font-pacifico">
         {plantDetails && plantDetails.common_name}
       </h1>
       <DetailsCard plantDetails={plantDetails} />

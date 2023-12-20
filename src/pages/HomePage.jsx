@@ -37,7 +37,7 @@ export default function HomePage() {
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center ">
       <div>
-        <h1 className="text-black lg:text-5xl mb-8 md:text-2xl sm:text-xl font-pacifico">
+        <h1 className="text-black text-4xl mb-8 font-pacifico">
           Welcome on PlantPedia
         </h1>
       </div>

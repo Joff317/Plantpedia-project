@@ -24,11 +24,11 @@ export default function Nav() {
     },
     {
       name: "Search by categories",
-      navlink: "/plantCategories",
+      navlink: "/searchCategories",
     },
     {
       name: "Search by countries",
-      navlink: "/country",
+      navlink: "/searchCountries",
     },
   ];
 
@@ -97,7 +97,7 @@ export default function Nav() {
               //     : "foreground"
               // }
               className="w-full"
-              href={item.navlink}
+              to={item.navlink}
               size="lg"
             >
               {item.name}
