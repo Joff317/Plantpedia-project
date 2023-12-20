@@ -48,9 +48,9 @@ const DetailsCard = (props) => {
             </ul>
 
             <div className="author mt-8 flex flex-col justify-center items-center">
-              <h1>
+              <h2>
                 Author : {props.plantDetails && props.plantDetails.author}
-              </h1>
+              </h2>
               <p>
                 {" "}
                 <span className="font-bold">Bibliography:</span>{" "}
