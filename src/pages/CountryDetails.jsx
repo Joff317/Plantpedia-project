@@ -41,7 +41,7 @@ export default function CountryDetails() {
 
   return (
     <div className="min-h-full pt-4 w-full flex flex-col items-center justify-center">
-      <h1 className="lg:text-5xl mb-8 md:text-2xl sm:text-xl font-rubikDoodleShadow">
+      <h1 className="text-4xl mb-8 font-rubikDoodleShadow">
         Country Details
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-center">
