@@ -53,7 +53,7 @@ export default function CountryDetails() {
           </p>
         )}
       </div>
-      {countryDetails && (
+      {countryDetails.length > 0 && (
         <HomeArrow
           currentPage={currentPage}
           handleClickLast={handleClickLast}
