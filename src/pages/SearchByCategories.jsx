@@ -82,7 +82,7 @@ export default function SearchByCategories() {
             <HomeCard key={plant.id} plant={plant} />
           ))}
       </div>
-      {filteredData && (
+      {filteredData.length > 0 && (
         <HomeArrow
           currentPage={currentPage}
           handleClickLast={handleClickLast}
